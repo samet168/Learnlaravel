@@ -33,7 +33,7 @@
 
                 <form action="{{ route('auth.login.process') }}" method="post" class="forms-sample">
                     {{-- token --}}
-                @csrf
+                @csrf 
 
                 <div class="form-group mb-3">
                     <label class="form-label">Email</label>
@@ -82,12 +82,12 @@
                   <div class="form-group d-flex justify-content-between">
                     <div class="form-check form-check-flat mt-0">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" checked> Keep me signed in </label>
+                        <input type="checkbox" name="remember" class="form-check-input" checked> remember me </label>
                     </div>
                     <a href="#" class="text-small forgot-password text-black">Forgot Password</a>
                   </div>
                   <div class="form-group">
-                    <button type="button" class="btn btn-block g-login">Log in with Google</button>
+                    <button type="button"  class="btn btn-block g-login">Log in with Google</button>
                   </div>
                   <div class="text-block text-center my-3">
                     <span class="text-small font-weight-semibold">Not a member ?</span>

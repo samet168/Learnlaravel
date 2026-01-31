@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // rememberToken នៅពេលដែលយើង login ហើយ​  គឺនៅពេលដែលយើងចូលលើក្រោយមិនចាំបាច់login ម្ដង់ទៀតទេ
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

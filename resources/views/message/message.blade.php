@@ -8,7 +8,7 @@
         @elseif(session('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 
-                <h5>{{ session('status') }}</h5>
+                <h5>{{ session('error') }}</h5>
                 {{-- <h3>invoice password or email is incorrect</h3> --}}
                 <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
             </div>

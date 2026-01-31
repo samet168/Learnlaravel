@@ -14,6 +14,7 @@ class AuthController extends Controller
     {
         return view('login');
     }
+// login
     public function ProcessLogin(Request $request)        
     {
     //   dd($request->all());  
@@ -31,10 +32,18 @@ class AuthController extends Controller
         // Auth =ប្រើបានតែជាមួយ user ទេ
         if(Auth::attempt($credentials)){
             return redirect()->route('product.index')->with('success', 'Login Successfully');
+        }else{
+            return redirect()->back()->with('error', 'Login Failed');
         }
     }else{
         return redirect()->back()->withInput()->withErrors($Validator);
     }
+    }
+// logout
+    public function logout(){
+        Auth::logout();
+        //Auth::logout(); ប្រើសម្រាប់ logout
+        return redirect()->route('auth.show.login')->with('success', 'Logout Successfully');
     }
 
 
